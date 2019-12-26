@@ -1,0 +1,58 @@
+html {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+#logo {
+  margin: 24px 24px ;
+  display: inline-block;
+}
+
+.flexcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-content:space-around;
+  margin: auto 12px;
+}
+
+.item {
+  font-size: 36px;
+  width: 86px;
+  height: 86px;
+  line-height: 86px;
+  text-align: center;
+  margin: 4px;
+  box-shadow: 3px 3px 3px rgb(230, 230, 230);
+  background-color: rgb(240, 240, 240);
+}
+
+#viewarea {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: auto;
+}
+
+#upperbit {
+  width: 100px;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+  font-size: 128px;
+}
+
+#lowerbit {
+  width: 100px;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+  font-size: 128px;
+}
+
+/* @override */
+#modal {
+  width: 30%;
+}
