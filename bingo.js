@@ -1,5 +1,11 @@
 window.addEventListener("DOMContentLoaded", function() {
 
+    window.addEventListener("beforeunload", function (e) {
+        e.returnValue = "本当にページ移動しますか？";
+    }, false);
+
+    var is_modal_open = false;
+
   // 定数
   const bingo_max_number = 75;
   const logo = document.getElementById("logo");
@@ -28,12 +34,14 @@ window.addEventListener("DOMContentLoaded", function() {
     elem.style.backgroundColor = "#d9c816";
     elem.style.color = "#f0f0f0";
     pre_elem = elem;
+    is_modal_open = false;
   };
 
   // モーダル開始後イベントコールバック関数 onOpenEnd
   var id;
   let onOpenEnd = function(){
     player.play();
+    is_modal_open = true;
     let i=0;
     let j=5;
     let count = 0;
@@ -68,6 +76,7 @@ window.addEventListener("DOMContentLoaded", function() {
   // 重複のないランダムな数列を用意
   let array = getShuffledArray();
 
+  // logoのクリックによるイベント発火
   logo.addEventListener("click", function() {
     // write code
     if(array.length >0){
@@ -82,6 +91,17 @@ window.addEventListener("DOMContentLoaded", function() {
       var instance = M.Modal.getInstance(logo);
       // モーダル終了後イベントコールバック関数を参照
       // onCloseEnd
+    }
+  }, false);
+
+  document.addEventListener("keydown", function(event) {
+    // write code
+    if(event.key == "Enter"){
+        if(is_modal_open){
+            viewarea.click();
+        }else{
+            logo.click();
+        }
     }
   }, false);
 
