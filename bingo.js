@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function() {
     div.innerText = str;
     list.appendChild(div);
   }
-  
+
   // モーダル終了後イベントコールバック関数 onCloseEnd
   // 引数を渡す術が分からないため、グローバル変数
   var num, pre_elem;
@@ -31,12 +31,13 @@ window.addEventListener("DOMContentLoaded", function() {
   };
 
   // モーダル開始後イベントコールバック関数 onOpenEnd
+  var id;
   let onOpenEnd = function(){
     player.play();
     let i=0;
     let j=5;
     let count = 0;
-    let id = setInterval(function(){
+    id = setInterval(function(){
       if(count > 46){
         clearInterval(id);
       }
@@ -45,6 +46,14 @@ window.addEventListener("DOMContentLoaded", function() {
       count++;
     }, 100);
   };
+
+  // 巻き機能
+  viewarea.addEventListener("click", function(){
+      player.pause();
+      clearInterval(id);
+      upperbit.textContent = parseInt(num / 10);
+      lowerbit.textContent = parseInt(num % 10);
+  }, false);
 
   // モーダル初期化
   let elems = document.querySelectorAll('.modal');
