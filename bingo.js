@@ -50,6 +50,7 @@ window.addEventListener("DOMContentLoaded", function() {
   // 巻き機能
   viewarea.addEventListener("click", function(){
       player.pause();
+      player.currentTime = 0;
       clearInterval(id);
       upperbit.textContent = parseInt(num / 10);
       lowerbit.textContent = parseInt(num % 10);
