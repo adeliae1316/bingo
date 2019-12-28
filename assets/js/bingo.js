@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", function() {
   const upperbit = document.getElementById("upperbit");
   const lowerbit = document.getElementById("lowerbit");
   const player = new Audio();
-  player.src = "/assets/audio/drum_roll.mp3";
+  player.src = "../audio/drum_roll.mp3";
 
   // 初期化
   for(let i=0;i<bingo_max_number;i++){
