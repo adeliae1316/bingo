@@ -1,5 +1,13 @@
 # bingo
 
+## Link
+- https://adeliae1316.github.io/bingo/
+
+## How to use
+- Press Enter key or Click title `BINGO GAME` to get bingo number.
+- New number is yellow.
+- Already out numbers are blue.
+
 ## author
 - adeliae1316
 
