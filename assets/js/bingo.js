@@ -1,10 +1,10 @@
 window.addEventListener("DOMContentLoaded", function() {
 
-    window.addEventListener("beforeunload", function (e) {
-        e.returnValue = "本当にページ移動しますか？";
-    }, false);
+  window.addEventListener("beforeunload", function (e) {
+    e.returnValue = "本当にページ移動しますか？";
+  }, false);
 
-    var is_modal_open = false;
+  var is_modal_open = false;
 
   // 定数
   const bingo_max_number = 75;
@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", function() {
   const upperbit = document.getElementById("upperbit");
   const lowerbit = document.getElementById("lowerbit");
   const player = new Audio();
-  player.src = "drum_roll.mp3";
+  player.src = "/assets/audio/drum_roll.mp3";
 
   // 初期化
   for(let i=0;i<bingo_max_number;i++){
@@ -57,11 +57,11 @@ window.addEventListener("DOMContentLoaded", function() {
 
   // 巻き機能
   viewarea.addEventListener("click", function(){
-      player.pause();
-      player.currentTime = 0;
-      clearInterval(id);
-      upperbit.textContent = parseInt(num / 10);
-      lowerbit.textContent = parseInt(num % 10);
+    player.pause();
+    player.currentTime = 0;
+    clearInterval(id);
+    upperbit.textContent = parseInt(num / 10);
+    lowerbit.textContent = parseInt(num % 10);
   }, false);
 
   // モーダル初期化
@@ -97,11 +97,11 @@ window.addEventListener("DOMContentLoaded", function() {
   document.addEventListener("keydown", function(event) {
     // write code
     if(event.key == "Enter"){
-        if(is_modal_open){
-            viewarea.click();
-        }else{
-            logo.click();
-        }
+      if(is_modal_open){
+        viewarea.click();
+      }else{
+        logo.click();
+      }
     }
   }, false);
 
