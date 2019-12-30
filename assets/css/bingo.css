@@ -11,25 +11,11 @@ h1 {
   display: inline-block;
 }
 
-#gridcontainer {
-  display: grid;
-  grid-template-columns: 1fr 20%;
-  grid-template-areas:
-  "areaA areaB";
-}
-
-.griditem {
-
-}
-
-#list {
-  grid-area: areaA;
-}
-
 .flexcontainer {
   display: flex;
   flex-wrap: wrap;
   align-content:space-around;
+  margin: auto 12px;
 }
 
 .item {
@@ -43,8 +29,7 @@ h1 {
   background-color: rgb(240, 240, 240);
 }
 
-#numarea {
-  grid-area: areaB;
+#viewarea {
   display: flex;
   justify-content: center;
   width: auto;
@@ -65,4 +50,9 @@ h1 {
   line-height: 120px;
   text-align: center;
   font-size: 128px;
+}
+
+/* @override */
+#modal {
+  width: 30%;
 }
